@@ -8,7 +8,7 @@ test("The returnsBobRoss function returns Bob Ross", () => {
   let result = functions.returnsBobRoss();
 
   //Assert
-  expect(result).toBe("Bob Ross");
+  expect(result).toMatch(/Bob Ross/i);
 });
 
 describe("Add Function", () => {
@@ -34,6 +34,17 @@ describe("Add Function", () => {
 
     //Assert
     expect(result).toBe(2);
+  });
+  test("The add function adds .1 and .2 to get .3", () => {
+    //Arrange
+    let num1 = .1;
+    let num2 = .2;
+
+    //Act
+    let result = functions.add(num1, num2);
+
+    //Assert
+    expect(result).toBeCloseTo(.3);
   });
 });
 

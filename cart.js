@@ -11,9 +11,12 @@ module.exports = {
     }
   },
   calculateTotal: function() {
-    cart.reduce((a, b) => a + b.price, 0);
+    return cart.reduce((a, b) => a + b.price, 0);
   },
   getCart: function() {
     return cart;
+  },
+  clearCart: function() {
+    cart = [];
   }
 };
